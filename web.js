@@ -4,18 +4,9 @@ var fs = require('fs');
 
 var app = express.createServer(express.logger());
 var buffer = new Buffer(128);
-fs.readFile('~/bitstarter/index.html', function (err, data) {
-  app.get('/', function(request, response) {
-     response.send(buffer.ToString(data));
-  });
-console.log("after readFile");
-});
+buffer=fs.readFile('~/bitstarter/index.html'); 
+//     response.send(buffer.ToString(data));
 
-// app.get('/', function(request, response) {
-  // response.send(buffer.ToString(data));
-// });
+console.log("Buffer:"+buffer);
 
-//var port = process.env.PORT || 5000;
-//app.listen(port, function() {
-//  console.log("Listening on " + port);
-//});
+
